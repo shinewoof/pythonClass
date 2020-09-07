@@ -13,9 +13,9 @@ def urlCrawler(q):
         print(domain)
         t = threading.Thread(target=threadUrlCrawler, args=(domain, q))
         t.start()
-    
+    # 此處有隱憂，但有點難測試出來
     t.join()
-
+    
 
 def threadUrlCrawler(domain, q):
     resp = requests.get(domain)
